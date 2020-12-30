@@ -1,0 +1,32 @@
+* {
+  font-family: monospace;
+  font-weight: 900;
+}
+
+.header-wrapper {
+  text-align: center;
+}
+
+.header-text {
+  font-size: 4em;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.header-el {
+  background: none;
+  border-radius: 10px;
+  justify-content: center;
+  display: inline-flex;
+  font-size: 2em;
+  padding: 5px;
+  padding-right: 10vw;
+  padding-left: 10vw;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+  letter-spacing: 5px;
+  margin: 1vw;
+  margin-top: 10px;
+  background-color: darkblue;
+  color: white;
+}

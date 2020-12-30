@@ -3,23 +3,27 @@ const content = document.getElementById('content')
 function header() {
 
   const headerWrapper = document.createElement('div')
-  headerWrapper.id = 'header-wrapper'
-  headerWrapper.innerText = 'This is the header-wrapper.'
+  headerWrapper.classList.add('header-wrapper')
   content.append(headerWrapper)
+
+  const headerText = document.createElement('h2')
+  headerText.classList.add('header-text')
+  headerText.innerText = 'KM Luxury Dining'
+  headerWrapper.append(headerText)
     
-  const headerFirst = document.createElement('div')
-  headerFirst.id = 'header-first'
-  headerFirst.innerText = 'This is the first element in the header-wrapper.'
+  const headerFirst = document.createElement('button')
+  headerFirst.classList.add('header-el')
+  headerFirst.innerText = 'Home'
   headerWrapper.append(headerFirst)
 
-  const headerSecond = document.createElement('div')
-  headerSecond.id = 'header-second'
-  headerSecond.innerText = 'This is the second element in the header-wrapper.'
+  const headerSecond = document.createElement('button')
+  headerSecond.classList.add('header-el')
+  headerSecond.innerText = 'Menu'
   headerWrapper.append(headerSecond)
 
-  const headerThird = document.createElement('div')
-  headerThird.id = 'header-third'
-  headerThird.innerText = 'This is the third element in the header-wrapper.'
+  const headerThird = document.createElement('button')
+  headerThird.classList.add('header-el')
+  headerThird.innerText = 'Contact'
   headerWrapper.append(headerThird)
 }
 
