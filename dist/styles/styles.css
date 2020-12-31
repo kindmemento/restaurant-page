@@ -1,32 +1,124 @@
 * {
   font-family: monospace;
   font-weight: 900;
+  margin: auto;
 }
 
 .header-wrapper {
   text-align: center;
+  top: 0;
+  background-color: black;
 }
 
 .header-text {
   font-size: 4em;
-  margin-top: 5px;
-  margin-bottom: 5px;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  color: white;
+}
+
+.header-wrapper :nth-child(2) {
+  border-left: none;
+}
+
+.header-wrapper :last-child {
+  border-right: none;
 }
 
 .header-el {
   background: none;
-  border-radius: 10px;
+  border-top: none;
   justify-content: center;
   display: inline-flex;
   font-size: 2em;
+  width: 33.3%;
   padding: 5px;
   padding-right: 10vw;
   padding-left: 10vw;
   padding-top: 1vh;
   padding-bottom: 1vh;
   letter-spacing: 5px;
-  margin: 1vw;
   margin-top: 10px;
   background-color: darkblue;
   color: white;
+  cursor: pointer;
+  transition: 0.3s;
+  opacity: 75%;
+}
+
+.header-el:hover {
+  letter-spacing: 15px;
+  background-color: blue;
+  opacity: 100%;
+}
+
+.footer-wrapper {
+  text-align: center;
+  bottom: 0;
+  position: fixed;
+}
+
+.footer-el {
+  justify-content: center;
+  display: inline-flex;
+  font-size: 1.2em;
+  width: 45vw;
+  padding-right: 30vw;
+  padding-left: 30vw;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+  letter-spacing: 5px;
+  white-space: nowrap;
+  background-color: darkblue;
+  color: white;
+}
+
+.home {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  font-size: 3em;
+  margin-left: 100px;
+  margin-right: 100px;
+  margin-top: 100px;
+}
+
+.menu-wrapper {
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.card {
+  display: inline-block;
+  color: white;
+  background-color: rgb(12, 27, 54);
+  border-style: ridge;
+  border-color: white;
+  width: 400px;
+  height: 300px;
+  top: 50%;
+  left: 50%;
+  transition: 0.2s;
+  margin: 20px 20px 20px 20px
+}
+
+.card-content {
+  text-align: center;
+  margin-top: 10px;
+  padding: 20px 20px 5px 20px;
+  letter-spacing: 2px;
+}
+
+.contact-item {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  font-size: 2em;
+  margin-left: 100px;
+  margin-right: 100px;
+  margin-top: 100px;
 }

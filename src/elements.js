@@ -1,8 +1,11 @@
 const content = document.getElementById('content')
+const headerWrapper = document.createElement('div')
+const mainWrapper = document.createElement('div')
+const menuWrapper = document.createElement('div')
+const contactWrapper = document.createElement('div')
 
 function header() {
 
-  const headerWrapper = document.createElement('div')
   headerWrapper.classList.add('header-wrapper')
   content.append(headerWrapper)
 
@@ -16,61 +19,90 @@ function header() {
   headerFirst.innerText = 'Home'
   headerWrapper.append(headerFirst)
 
+  headerFirst.addEventListener ('click', (e) => {
+    mainWrapper.style.display = 'inherit'
+    menuWrapper.style.display = 'none'
+    contactWrapper.style.display = 'none'
+  })
+
   const headerSecond = document.createElement('button')
   headerSecond.classList.add('header-el')
   headerSecond.innerText = 'Menu'
   headerWrapper.append(headerSecond)
 
+  headerSecond.addEventListener ('click', (e) => {
+    mainWrapper.style.display = 'none'
+    menuWrapper.style.display = 'inherit'
+    contactWrapper.style.display = 'none'
+  })
+
   const headerThird = document.createElement('button')
   headerThird.classList.add('header-el')
   headerThird.innerText = 'Contact'
   headerWrapper.append(headerThird)
+
+  headerThird.addEventListener ('click', (e) => {
+    mainWrapper.style.display = 'none'
+    menuWrapper.style.display = 'none'
+    contactWrapper.style.display = 'inherit'
+  })
 }
 
 function main() {
 
-  const mainWrapper = document.createElement('div')
-  mainWrapper.id = 'main-wrapper'
-  mainWrapper.innerText = 'This is the main wrapper.'
+  mainWrapper.classList.add('main-wrapper')
   content.append(mainWrapper)
 
   const mainFirst = document.createElement('div')
-  mainFirst.id = 'main-first'
-  mainFirst.innerText = 'This is the first element in the main-wrapper.'
+  mainFirst.classList.add('home')
+  mainFirst.innerText = 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quibusdam blanditiis magnam facere aperiam quia inventore quidem ullam error, iste minus unde placeat. Possimus distinctio, in rem dolor eum nemo esse quam veniam! Vero exercitationem, modi magnam numquam nihil consequatur libero.'
   mainWrapper.append(mainFirst)
+}
 
-  const mainSecond = document.createElement('div')
-  mainSecond.id = 'main-second'
-  mainSecond.innerText = 'This is the second element in the main-wrapper.'
-  mainWrapper.append(mainSecond)
+function menu() {
+  menuWrapper.classList.add('menu-wrapper')
+  menuWrapper.style.display = 'none'
+  content.append(menuWrapper)
 
-  const mainThird = document.createElement('div')
-  mainThird.id = 'main-third'
-  mainThird.innerText = 'This is the third element in the main-wrapper.'
-  mainWrapper.append(mainThird)
+  for (let i = 0; i < 9; i++) {
+    const menuItem = document.createElement('div')
+    menuItem.classList.add('card')
+    menuWrapper.append(menuItem)
+
+    const menuItemName = document.createElement('div')
+    menuItemName.classList.add('card-content')
+    menuItemName.style.fontSize = '1.5em'
+    menuItemName.innerText = 'Menu Item Number ' + [i + 1]
+    menuItem.append(menuItemName)
+
+    const menuItemContent = document.createElement('p')
+    menuItemContent.classList.add('card-content')
+    menuItemContent.innerText = 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quibusdam blanditiis magnam facere aperiam quia inventore quidem ullam error, iste minus unde placeat. Possimus distinctio, in rem dolor eum nemo esse quam veniam! Vero exercitationem, modi magnam numquam nihil consequatur libero.'
+    menuItem.append(menuItemContent)
+  }
+}
+
+function contact() {
+  contactWrapper.classList.add('contact-wrapper')
+  contactWrapper.style.display = 'none'
+  content.append(contactWrapper)
+
+  const contactItem = document.createElement('p')
+  contactItem.classList.add('contact-item')
+  contactItem.innerText = 'Mailing Address: 4 Southside Avenue, Apartment 7-I, New Paltz/NY, 12561'
+  contactWrapper.append(contactItem)
 }
 
 function footer() {
   
-  const footerWrapper = document.createElement('div')
-  footerWrapper.id = 'main-wrapper'
-  footerWrapper.innerText = 'This is the footer wrapper.'
+  const footerWrapper = document.createElement('footer')
+  footerWrapper.classList.add('footer-wrapper')
   content.append(footerWrapper)
     
-  const footerFirst = document.createElement('div')
-  footerFirst.id = 'main-first'
-  footerFirst.innerText = 'This is the first element in the footer-wrapper.'
-  footerWrapper.append(footerFirst)
-  
-  const footerSecond = document.createElement('div')
-  footerSecond.id = 'main-second'
-  footerSecond.innerText = 'This is the second element in the footer-wrapper.'
-  footerWrapper.append(footerSecond)
-  
-  const footerThird = document.createElement('div')
-  footerThird.id = 'main-third'
-  footerThird.innerText = 'This is the third element in the footer-wrapper.'
-  footerWrapper.append(footerThird)
+  const footerItem = document.createElement('div')
+  footerItem.classList.add('footer-el')
+  footerItem.innerText = 'Developed by kindmemento'
+  footerWrapper.append(footerItem)
 }
 
-export { header, main, footer }
+export { header, main, menu, contact, footer }
